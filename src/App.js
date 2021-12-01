@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./styles/styles.css"
-import NavBar from "./components/NavBar";
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.jsx';
+import NavBar from "./components/NavBar/NavBar.jsx";
+
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
     
     <NavBar /> 
+    <ItemListContainer greeting="Hola soy ItemListContainer que vengo de app."/>
   
     </div>
   );

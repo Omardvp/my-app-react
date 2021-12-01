@@ -1,0 +1,11 @@
+i {
+    color: white;
+    font-size: 20px;
+    align-items: center;
+  
+}
+
+.barraPrincipal {
+    display: flex;
+    align-items: center;
+}
