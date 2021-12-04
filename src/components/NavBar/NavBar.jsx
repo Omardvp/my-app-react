@@ -1,7 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { CartWidget } from "./CartWidget";
+import { CartWidget } from "../CartWidget/CartWidget";
 import {} from "./NavBar.css"
 
 
@@ -12,9 +12,7 @@ const NavBar = () => {
     
       
       <Navbar.Brand href="#home" className="barraPrincipal">NavBar E-Commerce </Navbar.Brand>
-      <i>
-           <CartWidget />
-           </i>
+      <i><CartWidget /></i>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
