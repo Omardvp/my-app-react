@@ -6,12 +6,15 @@ import ItemCount from './components/ItemCount/ItemCount.jsx';
 
 
 
+
+
 function App() {
   return (
     <div className="App">
     
     <NavBar /> 
-    <ItemListContainer greeting="Hola soy ItemListContainer que vengo de app."/>
+    <ItemListContainer greeting="Equipment Vintage clote"/>
+    
    
   
     </div>

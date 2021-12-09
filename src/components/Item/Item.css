@@ -1,0 +1,26 @@
+ /* img {
+    width: 250px;
+    height: 230px;
+}  */
+
+/* .card {
+    display: flex;
+    flex-direction: row;
+}  */
+
+.cardStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: auto;
+    height: 50x;
+    margin: 7px 7px;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.card-title {
+    height: 40px;
+}
