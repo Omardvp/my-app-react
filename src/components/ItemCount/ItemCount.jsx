@@ -6,9 +6,13 @@ const ItemCount = ({stock, initial}) => {
 const [count, setCount] = useState(initial);
 
 const countSuma = () => {
+  
     setCount(count + 1);
 }
 const countResta = () => {
+    if (count > initial){
+        setCount(prevCount=> prevCount - 1)
+        }
     setCount(count - 1);
 }
 const confirmar = () => {

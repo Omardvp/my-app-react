@@ -20,7 +20,6 @@ export const ItemListContainer = (props) => {
         .finally(()=> setLoading(false))
         },[])
    
-    
     return (
         <div className="container greeting">
            {props.greeting }

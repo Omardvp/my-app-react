@@ -1,9 +1,10 @@
-
+// Importacion de imagenes
 import producto1 from "../assets/img/producto1.jpg"
 import producto2 from "../assets/img/producto2.png"
 import producto3 from "../assets/img/producto3.jpg"
 import producto4 from "../assets/img/producto4.png"
 
+//Array de productos
 const productos = [
     {id: 1, name: "Rompevientos", description:"Campera Adidas", price: 7000, img: producto1},
     {id: 2,name: "Zapatillas", description:"Converse React Hi 90s", price: 12000, img: producto2},
