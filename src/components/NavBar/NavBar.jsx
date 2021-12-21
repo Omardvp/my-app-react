@@ -25,7 +25,7 @@ const NavBar = () => {
            <Link to="my-app-react/categoria/Camisetas">Camisetas</Link>
            <Link to="my-app-react/categoria/Zapatillas">Zapatillas</Link>
            <Link to="my-app-react/categoria/Shorts">Shorts</Link>
-           <Link to="/carrito">Carrito</Link>
+           <Link to="my-app-react/carrito">Carrito</Link>
 
         
         </Nav>
