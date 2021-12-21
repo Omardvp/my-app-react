@@ -1,3 +1,4 @@
+import { Link , NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -11,7 +12,7 @@ const NavBar = () => {
       <Container>
     
       
-      <Navbar.Brand href="#home" className="barraPrincipal">NavBar E-Commerce </Navbar.Brand>
+      <Link to="/my-app-react/" className="barraPrincipal">NavBar E-Commerce </Link>
       <i><CartWidget /></i>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -19,10 +20,13 @@ const NavBar = () => {
         
         </Nav> 
         <Nav>
-           <Nav.Link href="#home">Home</Nav.Link>
-           <Nav.Link href="#aboutUs">About Us</Nav.Link>
-           <Nav.Link href="#shop">Shop</Nav.Link>
-           <Nav.Link eventKey={2} href="#contact">Contact</Nav.Link>
+           {/* <Link to="/">Home</Link> */}
+           <Link to="my-app-react/categoria/Camperas">Camperas</Link>
+           <Link to="my-app-react/categoria/Camisetas">Camisetas</Link>
+           <Link to="my-app-react/categoria/Zapatillas">Zapatillas</Link>
+           <Link to="my-app-react/categoria/Shorts">Shorts</Link>
+           <Link to="/carrito">Carrito</Link>
+
         
         </Nav>
       </Navbar.Collapse>

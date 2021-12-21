@@ -6,7 +6,7 @@ import {} from "./ItemList.css"
 function ItemList({productos}) {
     return (
         <div style={{display: 'flex' }}>
-            { productos.map(producto => <Item producto={producto}/>)}
+            { productos.map((producto, index) => <Item producto={producto} key={index}/>)}
         </div>
     )
 }

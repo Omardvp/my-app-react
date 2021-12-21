@@ -1,0 +1,76 @@
+// export const ItemDetailContainer = () => {
+//   const [item, setItem] = useState([]);
+//   const [loading, setLoading] = useState(true)
+//   console.log(item);
+
+//   useEffect(() => {
+//     getOneProduct.then((res) => setItem(res)).catch((err) => console.log(err))
+//     .finally(()=> setLoading(false));
+//   });
+
+//   <Routes>
+//           <Route 
+//           exact
+//           path="my-app-react/"
+//           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/> }
+//           />
+//           <Route
+//           exact 
+//           path="my-app-react/categoria:idCategoria"
+//           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/>} 
+//           />
+//           <Route
+//           exact 
+//           path="my-app-react/detalle"
+//           element={ <ItemDetailContainer /> }
+//           />
+//            <Route path="my-app-react/carrito" element={<Cart />}/> 
+//       </Routes>
+
+// <BrowserRouter>
+//   <div className="App">
+//     <NavBar /> 
+//       <Routes>
+//           <Route 
+//           exact
+//           path="my-app-react/"
+//           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/> }
+//           />
+//           <Route
+//           exact 
+//           path="my-app-react/categoria:idCategoria"
+//           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/>} 
+//           />
+//           <Route
+//           exact 
+//           path="my-app-react/detalle"
+//           element={ <ItemDetailContainer /> }
+//           />
+//            <Route path="my-app-react/carrito" element={<Cart />}/> 
+//       </Routes>
+//   </div>
+// </BrowserRouter>
+
+// if (idCategoria){
+//     getFetch
+//     .then(resp => setProductos(resp.filter(prod => prod.categoria === idCategoria))) 
+//     .catch(error => console.log(error))
+//     .finally(()=> setLoading(false))
+    
+// } else {
+// getFetch
+// .then(resp => setProductos(resp)) 
+// .catch(err => console.log(err))
+// .finally(()=>setLoading(false))           
+// }  }, [idCategoria])
+
+// useEffect(() => {
+//     requestCategoria.then((resultCategorias)=>{
+//         setTimeout(()=>{
+//             setLoading(false)
+//         }, 2000);
+//         const filteredCategorias = resultCategorias.filter(resultCategoria=>{
+//             return(resultCategorias.categoria === idCategoria)
+//         });
+//         setCategoria(filteredCategorias)
+//     })

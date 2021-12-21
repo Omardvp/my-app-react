@@ -1,18 +1,37 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.jsx';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import NavBar from "./components/NavBar/NavBar.jsx";
 import {} from "./components/CartWidget/CartWidget.css";
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.jsx';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer.jsx';
-// import ItemCount from './components/ItemCount/ItemCount.jsx';
-// import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Cart} from "./components/Cart/Cart";
+
 
 function App() {
   return (
-    <div className="App">
+      <BrowserRouter>
+  <div className="App">
     <NavBar /> 
-    <ItemListContainer greeting="Equipment Vintage clote"/>
-    <ItemDetailContainer />
-    </div>
+      <Routes>
+          <Route 
+          
+          path="my-app-react/"
+          element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/> }
+          />
+          <Route
+         
+          path="my-app-react/categoria/:idCategoria"
+          element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/>} 
+          />
+          <Route
+           
+          path="my-app-react/detalle/:id"
+          element={ <ItemDetailContainer /> }
+          />
+           <Route path="my-app-react/carrito" element={<Cart />}/> 
+      </Routes>
+  </div>
+</BrowserRouter>
   );
 }
 
