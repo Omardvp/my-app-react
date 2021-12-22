@@ -8,19 +8,19 @@ import {} from "./NavBar.css"
 
 const NavBar = () => {
     return(
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
       <Container>
     
       
-      <Link to="/my-app-react/" className="barraPrincipal">NavBar E-Commerce </Link>
+      <Link to="/my-app-react/" className="barraPrincipal">Vintage Sport Clote</Link>
       <i><CartWidget /></i>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
         
-        </Nav> 
+        </Nav>
+       
         <Nav>
-           {/* <Link to="/">Home</Link> */}
            <Link to="my-app-react/categoria/Camperas">Camperas</Link>
            <Link to="my-app-react/categoria/Camisetas">Camisetas</Link>
            <Link to="my-app-react/categoria/Zapatillas">Zapatillas</Link>
@@ -29,6 +29,7 @@ const NavBar = () => {
 
         
         </Nav>
+       
       </Navbar.Collapse>
 
       </Container>

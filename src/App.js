@@ -14,17 +14,14 @@ function App() {
     <NavBar /> 
       <Routes>
           <Route 
-          
           path="my-app-react/"
           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/> }
           />
           <Route
-         
           path="my-app-react/categoria/:idCategoria"
           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/>} 
           />
           <Route
-           
           path="my-app-react/detalle/:id"
           element={ <ItemDetailContainer /> }
           />
