@@ -2,32 +2,19 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import  ItemDetail  from '../ItemDetail/ItemDetail.jsx';
 import { useParams } from 'react-router-dom';
-import {productos} from "../../helpers/getFetch"
+import {getFetch} from "../../helpers/getFetch"
 
 export const ItemDetailContainer = () => { 
 const [loading, setLoading] = useState(true)
     const [Item, setItem] = useState({})
     const {id} = useParams()
 
-    const getItem = new Promise((resolve)=>{
-      setTimeout(() => {
-          resolve(productos)
-      }, 2000);
-  })
-   
     useEffect(() => {        
-        getItem.then(resultProducts=>{
-          resultProducts.filter((resultProduct)=>{
-              if (resultProduct.id === parseInt(id)) {
-                  setItem(resultProduct)
-                  setLoading(false)
-              }
-          })
-      })
-
-           
-               
-    }, []) 
+      getFetch
+          .then(resp => setItem(resp.find(Item => Item.id === parseInt(id)))) 
+          .catch(err => console.log(err))
+          .finally(()=>setLoading(false))
+     },[]) 
 
     return (
       <div>
@@ -38,3 +25,23 @@ const [loading, setLoading] = useState(true)
 
 }
 
+
+    //   const getItem = new Promise((resolve)=>{
+    //     setTimeout(() => {
+    //         resolve(productos)
+    //     }, 2000);
+    // })
+     
+    //   useEffect(() => {        
+    //       getItem.then(resultProducts=>{
+    //         resultProducts.filter((resultProduct)=>{
+    //             if (resultProduct.id === parseInt(id)) {
+    //                 setItem(resultProduct)
+    //                 setLoading(false)
+    //             }
+    //         })
+    //     })
+  
+             
+                 
+    //   }, []) 
