@@ -16,7 +16,7 @@ const ItemDetail = ({ Item }) => {
     setGoCart(false);
     AgregarAlCarrito({...Item, cantidad: cant})
   }
-
+  
   return (
 
     <div className="container" style={{display: 'flex', border: 'solid 1px black', borderRadius: '5px', marginTop: '20px', marginBottom: '20px'}}>

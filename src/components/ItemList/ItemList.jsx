@@ -7,10 +7,10 @@ import { useContext } from "react";
 
 
 function ItemList({productos}) {
-    const {item} = useContext(CartContext)
+    // const {item} = useContext(CartContext)
     return (
         <div style={{display: 'flex' }}>
-            { productos.map((producto) => <Item producto={producto} />)}
+            { productos.map((producto) => <Item producto={producto} key={producto.id}/>)}
         </div>
     )
 }

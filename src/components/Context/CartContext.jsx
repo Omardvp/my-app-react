@@ -1,12 +1,12 @@
-
-import {createContext, useState} from "react";
-import { productos } from "../../helpers/getFetch";
+import {createContext, useState, useContext} from "react";
 
 export const CartContext = createContext([]);
 
+export const useCartContext = () => useContext(CartContext);
+
 const CartContextProvider = ({children}) => {
 
-    const [producto, setProducto] = useState(productos);
+  
     const [cartList, setCartList] = useState([]);
 
 
@@ -24,17 +24,28 @@ const CartContextProvider = ({children}) => {
             setCartList([...cartList, Item])}
     }
     
+    const removeFromCart = (id)=>{
+        // let posicion= cartList.findIndex(Item=> Item.id===id)
+        // let newCartList= cartList
+        // newCartList.splice(posicion, 1) 
+        // setCartList([...newCartList])
+        setCartList(cartList.filter(producto => producto.id !== id))
+        
+    }
+   
     const removeCart = () => {
         setCartList([])
     }
+
+
     
     return(
         <CartContext.Provider
-        value={{producto,
-                setProducto,
-                cartList,
+        value={{cartList,
                 AgregarAlCarrito,
-                removeCart}}>
+                removeCart,
+                removeFromCart
+                }}>
             {children}
         </CartContext.Provider> 
     )
