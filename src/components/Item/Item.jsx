@@ -4,7 +4,9 @@ import {Link} from "react-router-dom"
 
 function Item({producto}) {
     return (
-        <div key={producto.id} className="container cardStyle" style={{width: '18rem', display: 'flex', flexWrap:'wrap' }}>
+        <div key={producto.id}
+                 className="container cardStyle" style={{width: '18rem', display: 'flex', flexWrap:'wrap' }}>
+               
                 <div className="card-body">
                   <div style={{height: '223px'}}>
                 <img src={producto.img} alt="" className="card-img-top"   />
