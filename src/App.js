@@ -19,7 +19,7 @@ function App() {
       <Routes>
           <Route 
           path="my-app-react/"
-          element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/> }
+          element={ <ItemListContainer greeting="Equipment. Vintage Sport clote " /> }
           />
           <Route
           path="my-app-react/categoria/:idCategoria"

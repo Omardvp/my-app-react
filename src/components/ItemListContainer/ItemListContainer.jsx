@@ -1,6 +1,6 @@
 import "../ItemListContainer/ItemListContainer.css";
 import React from 'react';
-import { getFetch } from "../../helpers/getFetch";
+// import { getFetch } from "../../helpers/getFetch";
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom"
@@ -9,8 +9,7 @@ import {collection, doc, getDoc, getDocs, getFirestore, query, where } from 'fir
 
 
 export const ItemListContainer = (props) => {
-    console.log(props.greeting);
-
+ 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
     const { idCategoria } = useParams()
@@ -31,7 +30,7 @@ export const ItemListContainer = (props) => {
     //         .finally(()=>setLoading(false))           
     //     }  }, [idCategoria])
     
-    //     console.log(idCategoria)
+        // console.log(idCategoria)
 
 
     useEffect(() => {
@@ -60,11 +59,13 @@ export const ItemListContainer = (props) => {
 
         return (
             <div className="container greeting">
-               {props.greeting }
+               {props.greeting}
                {loading ? <h2>Cargando...</h2> :
                <ItemList productos={productos}/>
                }
             </div>
+               
+               
         )
     }
    

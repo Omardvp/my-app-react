@@ -61,27 +61,14 @@ const CartContextProvider = ({children}) => {
         }
     }
 
-    // const mostrarContador = () => {
-    //     if (cartList.lenght > 0) {
-    //         const contador = cartList.reduce((anterior, actual)=> anterior + actual.cantidad, 0)
-    //         return contador
-    //     } else if(cartList.lenght === 0) {
-    //         return ""
-    //     }
-    // }
-
-
-    
     return(
         <CartContext.Provider
         value={{cartList,
                 AgregarAlCarrito,
                 removeCart,
                 removeFromCart,
-                
                 cartItemIncrease,
                 cartItemDecrease,
-                
                 }}>
             {children}
         </CartContext.Provider> 

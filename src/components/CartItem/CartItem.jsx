@@ -6,7 +6,7 @@ import { CartContext } from '../Context/CartContext'
 const CartItem = ( {Item, index} ) => {
 
     const { cartList, cartItemIncrease, cartItemDecrease, removeFromCart } = useContext(CartContext)
-    const [itemcantidad, setItemcantidad] = useState(Item.cantidad)
+    // const [itemcantidad, setItemcantidad] = useState(Item.cantidad)
 
 
     const [ subTotal, setSubTotal ] = useState(0)

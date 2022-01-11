@@ -21,10 +21,10 @@ export const CartWidget = () => {
     
     return (
         <div>
-            <p>
+            
             <BsFillCartFill  />
             {cartNumber > 0 ? <h2 className="cart-number">{cartNumber}</h2> : <></>}
-            </p>
+            
         </div>
         
     )

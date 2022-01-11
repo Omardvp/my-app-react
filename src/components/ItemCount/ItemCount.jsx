@@ -18,13 +18,13 @@ return (
         <p>{number}</p>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div  style={{ display: 'flex', flexDirection: 'row', justifyContent:"space-between", marginBottom:"5px"}}>
-            <button onClick={add} disabled={number === stock}  style={{ width:"70px"}} class="btn btn-danger">
+            <button onClick={add} disabled={number === stock}  style={{ width:"70px"}} className="btn btn-danger">
                 +
             </button>
-            <button onClick={substract} style={{ width:"70px"}} class="btn btn-danger">-</button>
+            <button onClick={substract} style={{ width:"70px"}} className="btn btn-danger">-</button>
 
             </div>
-            <button disabled={number === 0} onClick={() => onAdd(number)} class="btn btn-primary">
+            <button disabled={number === 0} onClick={() => onAdd(number)} className="btn btn-primary">
                 Agregar al carrito
             </button>
         </div>
