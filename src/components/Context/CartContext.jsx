@@ -25,11 +25,6 @@ const CartContextProvider = ({children}) => {
     }
     
     const removeFromCart = (item)=>{
-//         let posicion= cartList.findIndex(Item=> Item.id===item.id)
-//         if (posicion > -1) {
-//             cartList.splice(posicion, 1) 
-//             setCartList(cartList) 
-// }
         setCartList(cartList.filter(Item => Item.id !== item.id))
         
     }
