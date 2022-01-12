@@ -35,7 +35,7 @@ function Cart() {
 
     return (
         <>
-        
+      
             {
             cartList.length > 0 ? 
             <div>
@@ -44,13 +44,7 @@ function Cart() {
                     <h2>Carrito de compras</h2>
                     <h2 >Precio total de sus compras : ${total}</h2>
                     <button onClick={removeCart} className="btn btn-outline-danger">Vaciar Carrito</button> <br></br>
-               
-                    <button className="btn btn-outline-danger" >COMPRAR</button>
-                    <BuyForm />
-           
-
-                    
-
+                <BuyForm />
                 </div>
             </div>:
             <div className="container">

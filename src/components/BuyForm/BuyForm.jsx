@@ -1,9 +1,7 @@
-// import { useContext } from 'react'
-// import { CartContext } from '../../context/CartContext'
 
-import {  addDoc, collection, doc, getFirestore, Timestamp, updateDoc, writeBatch, where, query, documentId,getDocs } from "firebase/firestore"
+import { addDoc, collection, getFirestore, Timestamp, writeBatch, where, query, documentId,getDocs } from "firebase/firestore"
 import { useState } from "react"
-import { CartContext } from '../Context/CartContext'
+import { useCartContext } from '../Context/CartContext'
 
 
 
@@ -12,7 +10,7 @@ function Buy() {
     const [dataForm, setDataForm] = useState({
         name:"", email:"", phone:""
     })
-    const {  cartList, removeCart, total  } = CartContext()
+    const {  cartList, removeCart, total  } = useCartContext()
 
 
     const handleChange = (e) => {
@@ -81,7 +79,7 @@ function Buy() {
     return (
         <div>
             {idOrder.length !== 0 && idOrder}
-            {  cartList.map(prod=> <li>{prod.name}   {prod.cantidad}</li>) }
+            {  cartList.map(prod=> <li key={prod.id}>{prod.name}   {prod.cantidad}</li>) }
             <form 
                 onSubmit={generarOrden} 
                 onChange={handleChange} 
@@ -104,15 +102,14 @@ function Buy() {
                     placeholder='email' 
                     value={dataForm.email}
                 /><br/>
-                <button>Generar Orden</button>
             </form>
-            <button onClick={removeCart} >Vaciar Carrito</button>
+                <button>Generar Orden</button>
+          
 
         </div>
     )
 }
 
 export default Buy
-
 
 
