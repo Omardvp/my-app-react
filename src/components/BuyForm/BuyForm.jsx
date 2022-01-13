@@ -1,5 +1,5 @@
 
-import { addDoc, collection, getFirestore, Timestamp, writeBatch, where, query, documentId,getDocs } from "firebase/firestore"
+import { addDoc, collection, getFirestore, Timestamp, writeBatch, where, query, documentId, getDocs } from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from '../Context/CartContext'
 
@@ -32,7 +32,7 @@ function Buy() {
         //firebase.firestore.Timestamp.fromDate(new Date()); 
 
         orden.buyer = dataForm
-        orden.total = total();
+        orden.total = total;
 
         orden.items = cartList.map(cartItem => {
             const id = cartItem.id;
@@ -41,15 +41,15 @@ function Buy() {
             
             return {id, nombre, precio}   
         })
-
-        // Generar la orden 
+ 
+        // Generar la orden setIdOrder(resp.id) 
         const db = getFirestore()
         const ordenColeccion = collection(db, 'orders')
         addDoc(ordenColeccion, orden)
-        .then(resp => setIdOrder(resp.id))
+        .then(resp =>  console.log(resp))
         .catch(err => console.log(err))
         .finally(()=> {
-            removeCart()
+            // removeCart()
             setDataForm({
                 name:"", email:"", phone:""
             })
@@ -81,7 +81,7 @@ function Buy() {
             {idOrder.length !== 0 && idOrder}
             {  cartList.map(prod=> <li key={prod.id}>{prod.name}   {prod.cantidad}</li>) }
             <form 
-                onSubmit={generarOrden} 
+               onSubmit={generarOrden}
                 onChange={handleChange} 
             >
                 <input 
@@ -102,8 +102,8 @@ function Buy() {
                     placeholder='email' 
                     value={dataForm.email}
                 /><br/>
+                <button   >Generar Orden</button>
             </form>
-                <button>Generar Orden</button>
           
 
         </div>
