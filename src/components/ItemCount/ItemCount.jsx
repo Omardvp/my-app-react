@@ -1,6 +1,8 @@
 import React from "react";
 import {useState} from 'react';
 import {} from "./ItemCount.css"
+import { BsPlusLg } from "react-icons/bs";
+import { FaMinus } from 'react-icons/fa';
 
 const ItemCount = ({stock, onAdd}) => {
 const [number, setNumber] = useState(1)
@@ -14,15 +16,12 @@ const add = () => {
 
 
 return (
-    <div style={{ width: '150px' }}>
-        <p>{number}</p>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div  style={{ display: 'flex', flexDirection: 'row', justifyContent:"space-between", marginBottom:"5px"}}>
-            <button onClick={add} disabled={number === stock}  style={{ width:"70px"}} className="btn btn-danger">
-                +
-            </button>
-            <button onClick={substract} style={{ width:"70px"}} className="btn btn-danger">-</button>
-
+    <div>
+        <div className="counter">
+            <div  className="counterbody">
+            <button onClick={substract} className="btn btn-danger counterBtn"><FaMinus /> </button>
+            <h4>{number}</h4>
+            <button onClick={add} disabled={number === stock} className="btn btn-danger counterBtn"><BsPlusLg /></button>
             </div>
             <button disabled={number === 0} onClick={() => onAdd(number)} className="btn btn-primary">
                 Agregar al carrito

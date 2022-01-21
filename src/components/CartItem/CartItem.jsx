@@ -1,5 +1,7 @@
 import {useState, useEffect, useContext} from 'react'
 import { CartContext } from '../Context/CartContext'
+import {} from "./CartItem.css"
+import { BsFillCaretUpFill, BsFillCaretDownFill, BsTrash } from "react-icons/bs";
 
 
 
@@ -17,30 +19,34 @@ const CartItem = ( {Item, index} ) => {
 
     return (
     
-        <div className="container" style={{display: 'flex', border: 'solid 1px black', borderRadius: '5px', marginTop: '20px', marginBottom: '20px'}}>
+        <center className="container cartItemStyle" >
           
-            <div ><img src={Item.img} className="card-img-top" style={{height: '200px', width:'200px'}}/></div>
-            <div style={{padding: "20px"}}> 
-            <h3>{Item.name}</h3>
-            <h3>${Item.price}</h3>
-            <p>{Item.description}</p>
-            </div>
-            <div className="cantidad-cont">
-                <h2>x {cartList[index].cantidad}</h2>
+            <div ><img src={Item.img} className="cartImg"/></div>
+            <div className='cartTxt'> 
 
-                <div>   
-                    <button onClick={()=>cartItemDecrease(index)}>-</button>
-                    <button onClick={()=>cartItemIncrease(index)}>+</button>
-                    <div className="subtotal-cont">
-                        <p>Subtotal:</p>
-                        <b>${subTotal}</b>
-                    </div>
+            <h3>Producto: {Item.name}</h3>
+            <h5>Descripcion: {Item.description}</h5>
+            <h3>Precio: ${Item.price}</h3>
+            </div>
+            <div>
+                <h5>Cantidad:</h5>
+            <div>   
+
+                <div className='btnsCart'>
+                    <button className='btn btn-primary' onClick={()=>cartItemDecrease(index)}><BsFillCaretDownFill /></button>
+                    <h4> {cartList[index].cantidad} </h4>
+                    <button className='btn btn-danger' onClick={()=>cartItemIncrease(index)}><BsFillCaretUpFill /></button>
                 </div>
-            <button className="btn btn-outline-danger" onClick={()=>removeFromCart(Item)}>Eliminar del Carrito</button> 
+                <div>
+                    <h5>Subtotal:</h5>
+                    <h5>${subTotal}</h5>
+                </div>
+                </div>
+            <button className="btn btn-danger" onClick={()=>removeFromCart(Item)}><BsTrash /></button> 
             </div>
 
 
-        </div>
+        </center>
     )
 }
 
@@ -74,4 +80,3 @@ export default CartItem
 //         </div>
 //     )
 // }
- 

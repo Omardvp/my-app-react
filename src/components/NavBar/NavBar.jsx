@@ -8,34 +8,33 @@ import {} from "./NavBar.css"
 
 const NavBar = () => {
     return(
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="py-4 bg-dark">
       <Container>
-    
+      <Link to="/my-app-react/" className="barraPrincipal link">Vintage Sport Clote</Link>
       
-      <Link to="/my-app-react/" className="barraPrincipal">Vintage Sport Clote</Link>
-      <i><CartWidget /></i>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-        
         </Nav>
-       
-        <Nav>
-           <Link to="my-app-react/categoria/Camperas">Camperas</Link>
-           <Link to="my-app-react/categoria/Camisetas">Camisetas</Link>
-           <Link to="my-app-react/categoria/Zapatillas">Zapatillas</Link>
-           <Link to="my-app-react/categoria/Shorts">Shorts</Link>
-           <Link to="my-app-react/carrito">Carrito</Link>
-
-        
+        <Nav className="navCat">
+           <Link to="my-app-react/categoria/Camperas" className="link">Camperas</Link>
+           <Link to="my-app-react/categoria/Camisetas" className="link">Camisetas</Link>
+           <Link to="my-app-react/categoria/Zapatillas" className="link">Zapatillas</Link>
+           <Link to="my-app-react/categoria/Shorts" className="link">Shorts</Link>
+           <Link to="my-app-react/carrito" className="link">Carrito</Link>
+           <i className="position-relative"><CartWidget /></i>
         </Nav>
-       
-      </Navbar.Collapse>
-
+       </Navbar.Collapse>
       </Container>
-      
-    </Navbar>
+      </Navbar>
     )
 }
 
 export default NavBar;
+
+{/* <button type="button" className="btn btn-primary position-relative">
+  Profile
+  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+    <span class="visually-hidden">New alerts</span>
+  </span>
+</button> */}

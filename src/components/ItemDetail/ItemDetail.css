@@ -1,0 +1,19 @@
+.cardStyleDetail {
+    display: flex;
+    border: solid 2px black;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 350px;
+}
+
+.ImgDetail{
+    height: 300px;
+    width: 300px;
+}
+
+.btnsItem {
+    display: flex;
+    width: 280px;
+    justify-content: space-around;
+}

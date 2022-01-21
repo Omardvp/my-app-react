@@ -3,3 +3,16 @@
     align-items: center;
 }
 
+.link {
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+
+    }
+
+.navCat {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

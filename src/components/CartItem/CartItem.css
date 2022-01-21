@@ -1,0 +1,28 @@
+.cartItemStyle {
+    display: flex;
+    border: solid 1px black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 700px;
+    padding: 10px;
+}
+
+.cartImg {
+    width: 200px;
+    height: 180px;
+}
+
+.cartTxt {
+    padding: 10px;
+    width: 400px;
+ }
+
+.btnsCart {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 120px;
+    }
+
+    

@@ -1,27 +1,32 @@
- /* img {
-    width: 250px;
-    height: 230px;
-}  */
-
-/* .card {
-    display: flex;
-    flex-direction: row;
-}  */
-
+/* Estilo de tarjeta */
 .cardStyle {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
-    width: auto;
-    height: 50x;
+    width: 18rem;
+    height: 500px;
     margin: 7px 7px;
     border: solid 1px black;
     border-radius: 5px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.card-title {
-    height: 40px;
+.cardTitle {
+    height: 50px;
+}
+
+.contImg {
+    height: 223px;
+}
+
+.imgCardItem {
+    width: 260px;
+    height: 230px;
+}
+
+.contTxt {
+height: 220px; 
+padding: 10px;
 }
 

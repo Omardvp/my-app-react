@@ -4,7 +4,6 @@ import { CartContext } from '../Context/CartContext';
 import {  useState, useEffect, useContext } from 'react'
 
 export const CartWidget = () => {
-    // const { mostrarContador } = useCartContext()
     const [cartNumber, setCartNumber] = useState(0);
 
     const { cartList } = useContext(CartContext)
@@ -21,11 +20,11 @@ export const CartWidget = () => {
     
     return (
         <div>
-            
             <BsFillCartFill  />
-            {cartNumber > 0 ? <h2 className="cart-number">{cartNumber}</h2> : <></>}
-            
-        </div>
-        
-    )
+            {cartNumber > 0 ? <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {cartNumber}<span class="visually-hidden"></span>
+            </span> : <></>}
+            </div>
+        )
 }
+

@@ -30,7 +30,7 @@ export const ItemListContainer = (props) => {
     //         .finally(()=>setLoading(false))           
     //     }  }, [idCategoria])
     
-        // console.log(idCategoria)
+    //     console.log(idCategoria)}
 
 
     useEffect(() => {

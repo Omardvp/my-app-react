@@ -5,6 +5,7 @@ import {  useState, useEffect } from 'react'
 import CartItem from '../CartItem/CartItem'
 import {Link} from "react-router-dom"
 import BuyForm from '../BuyForm/BuyForm'
+import {} from "./Cart.css"
 
 
 function Cart() {
@@ -39,18 +40,20 @@ function Cart() {
             {
             cartList.length > 0 ? 
             <div>
+                <center>
+                    <h2>Tu carrito: </h2>
+                </center> 
                 {ShowList} 
-                <div className="container">
-                    <h2>Carrito de compras</h2>
-                    <h2 >Precio total de sus compras : ${total}</h2>
-                    <button onClick={removeCart} className="btn btn-outline-danger">Vaciar Carrito</button> <br></br>
+                <center className="container finalCard">
+                    <h2 className='totalPrice'>Precio total de tus compras : ${total}</h2>
+                     
                 <BuyForm />
-                </div>
+                </center>
             </div>:
-            <div className="container">
+            <center className="container">
                 <h2>Tu carrito está vacío</h2>
                 <Link className="btn btn-warning" to={'/my-app-react/'}>Seguir comprando</Link>
-            </div>
+            </center>
             }
 
                 

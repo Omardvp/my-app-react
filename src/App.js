@@ -6,15 +6,17 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from "./components/Cart/Cart";
 import { CartContextProvider } from "./components/Context/CartContext.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
 
 
 
 function App() {
   return (
+    <div className="App">
       <CartContextProvider>
 
       <BrowserRouter>
-  <div className="App">
+  
     <NavBar /> 
       <Routes>
           <Route 
@@ -31,9 +33,11 @@ function App() {
           />
            <Route path="my-app-react/carrito" element={<Cart />}/> 
       </Routes>
-  </div>
+      <Footer/>
+  
 </BrowserRouter>
        </CartContextProvider>
+       </div>
   );
 }
 

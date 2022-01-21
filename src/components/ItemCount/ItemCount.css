@@ -1,3 +1,18 @@
-button {
+/* Conter Style */
+.counter {
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+}
+
+.counterbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.counterBtn {
+    width: 70px;
     padding: 7px;
 }

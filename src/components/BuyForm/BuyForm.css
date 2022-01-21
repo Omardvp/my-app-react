@@ -1,0 +1,18 @@
+input {
+    margin-bottom: 15px;
+}
+input:focus{
+    border: solid 1px blue;
+}
+
+.infTxt {
+    margin-bottom: 15px;
+}
+
+.btnsForm {
+    display: flex;
+    justify-content: space-evenly;
+    width: 350px;
+    
+}
+
