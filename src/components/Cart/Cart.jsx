@@ -38,7 +38,7 @@ function Cart() {
         <>
       
             {
-            cartList.length > 0 ? 
+            cartList.length ? 
             <div>
                 <center>
                     <h2>Tu carrito: </h2>

@@ -8,7 +8,7 @@ import {} from "./BuyForm.css"
 function Buy() {
     const {  cartList, removeCart, totalCart  } = useCartContext()
     const [idOrder, setIdOrder] = useState('')
-    const [orden, setOrden] = useState({
+    const [order, setOrder] = useState({
         name:"", email:"", phone:"",
         items: cartList.map(item => ({
             id: item.id,
@@ -17,12 +17,12 @@ function Buy() {
         })),
         total: totalCart()
     })
-console.log('orden', orden);
+console.log('order', order);
     const handleChange = (e) => {
         // console.log(e.target.name)
         // console.log(e.target.value)
-        setOrden({
-            ...orden,
+        setOrder({
+            ...order,
             [e.target.name]: e.target.value
         })
     }
@@ -32,13 +32,13 @@ console.log('orden', orden);
         // Generar la orden setIdOrder(resp.id) 
         const db = getFirestore()
         const ordenColeccion = collection(db, 'orders')
-        addDoc(ordenColeccion, orden)
+        addDoc(ordenColeccion, order)
         .then(resp => setIdOrder(resp.id))
         .catch(err => console.log(err))
         .finally(()=> {
             // removeCart()
-            setOrden({
-            name:orden.name, email:orden.email, phone:orden.phone
+            setOrder({
+            name:order.name, email:order.email, phone:order.phone
                             })
         })
 
@@ -67,9 +67,9 @@ console.log('orden', orden);
         <div>
             {idOrder ? <div>
                 <h3>Orden de compra generada con el id: {idOrder}</h3>
-                <h3>A nombre de: {orden.name}</h3>
-                <h3>Telefono: {orden.phone} </h3>
-                <h3>E-mail: {orden.email}</h3>
+                <h3>A nombre de: {order.name}</h3>
+                <h3>Telefono: {order.phone} </h3>
+                <h3>E-mail: {order.email}</h3>
                 </div> 
             :
             
@@ -85,22 +85,22 @@ console.log('orden', orden);
                 <input className=""
                     type='text' 
                     name='name' 
-                    placeholder='Ej: John Insua' 
-                    defaultValue={orden.name}
+                    placeholder='Ej: John Rodriguez' 
+                    defaultValue={order.name}
                 /><br />
                 <label htmlFor="phone">Telefono:</label>
                 <input 
-                    type='text' 
+                    type='number' 
                     name='phone'
-                    placeholder='Ej: 011 4563450' 
-                    defaultValue={orden.phone}
+                    placeholder='Ej: 011 1234567' 
+                    defaultValue={order.phone}
                 /><br/>
                 <label htmlFor="email">E-Mail:</label>
                 <input 
                     type='email' 
                     name='email'
                     placeholder='Ej: nombre@mail.ok' 
-                    defaultValue={orden.email}
+                    defaultValue={order.email}
                 /><br/>
                 <br></br>
                 <div className="btnsForm"> 
