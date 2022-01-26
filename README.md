@@ -24,11 +24,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Librerias que use
 
-| [Bootstrap] | Para los estilos |  Version: 5.1.3
-| [React-Bootstrap] | Para los estilos |  Version: 2.0.2
-| [Firebase] | Para la base de datos |  Version: 9.6.1
-| [React-rooter] | Para gestionar el SPA |  Version: 6.1.1
-| [React-icons] | Para iconos |  Version: 4.3.1
+ Bootstrap: Para los estilos, Version: 5.1.3
+ React-Bootstrap: Para los estilos, Version: 2.0.2
+ Firebase: Para la base de datos, Version: 9.6.1
+ React-rooter: Para gestionar el SPA, Version: 6.1.1
+ React-icons: Para iconos, Version: 4.3.1
 
 
 ### `npm run build`
