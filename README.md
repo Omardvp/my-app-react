@@ -28,7 +28,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  React-Bootstrap: Para los estilos, Version: 2.0.2 \
  Firebase: Para la base de datos, Version: 9.6.1 \
  React-rooter: Para gestionar el SPA, Version: 6.1.1 \
- React-icons: Para iconos, Version: 4.3.1
+ React-icons: Para iconos, Version: 4.3.1 \
 
 
 ### `npm run build`
@@ -37,8 +37,8 @@ Construye la aplicación para la producción en la carpeta `build`.\
 
 ## Deployment
 
-| [gh-pages] | Version: 3.2.3
+gh-pages  Version: 3.2.3
 
 ## Banco de imagenes
-| [Cloudinary] | Alojamiento de imágenes
+Cloudinary: Para el alojamiento de imágenes
 
