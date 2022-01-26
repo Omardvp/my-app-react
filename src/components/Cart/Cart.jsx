@@ -10,8 +10,9 @@ import {} from "./Cart.css"
 
 function Cart() {
     
-    const { cartList, removeCart} = useContext(CartContext)
+    const { cartList } = useContext(CartContext)
     const [ total, setTotal ] = useState(0);
+   
     
     let totalNumber = 0;
 
@@ -24,7 +25,7 @@ function Cart() {
         setTotal(totalNumber)
     },[totalNumber])
 
-    
+   
 
        
     const ShowList = cartList.map((Item, index)=>{
@@ -33,6 +34,8 @@ function Cart() {
                 <CartItem key={Item.id} Item={Item} index={index}/>
         )
     })
+
+    
 
     return (
         <>
@@ -45,17 +48,18 @@ function Cart() {
                 </center> 
                 {ShowList} 
                 <center className="container finalCard">
-                    <h2 className='totalPrice'>Precio total de tus compras : ${total}</h2>
+                    <h2 className='totalPrice'>Precio total de tus compras : ${total}</h2> 
+                    
                      
                 <BuyForm />
-                </center>
+                    </center>
             </div>:
             <center className="container">
                 <h2>Tu carrito está vacío</h2>
                 <Link className="btn btn-warning" to={'/my-app-react/'}>Seguir comprando</Link>
             </center>
             }
-
+            
                 
 
         </>

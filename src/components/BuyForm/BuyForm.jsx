@@ -1,8 +1,8 @@
-import { addDoc, collection, getFirestore, Timestamp, writeBatch, where, query, documentId, getDocs } from "firebase/firestore"
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from '../Context/CartContext'
 import {} from "./BuyForm.css"
-// import { Formik} from "formik"
+
 
 
 function Buy() {
@@ -16,11 +16,11 @@ function Buy() {
             precio: item.price
         })),
         total: totalCart()
+
     })
-console.log('order', order);
+
     const handleChange = (e) => {
-        // console.log(e.target.name)
-        // console.log(e.target.value)
+     
         setOrder({
             ...order,
             [e.target.name]: e.target.value
@@ -29,11 +29,11 @@ console.log('order', order);
     const generarOrden =  (e) => {
         e.preventDefault()  
   
-        // Generar la orden setIdOrder(resp.id) 
+     
         const db = getFirestore()
         const ordenColeccion = collection(db, 'orders')
         addDoc(ordenColeccion, order)
-        .then(resp => setIdOrder(resp.id))
+        .then(resp => (setIdOrder(resp.id)))
         .catch(err => console.log(err))
         .finally(()=> {
             // removeCart()
@@ -42,23 +42,6 @@ console.log('order', order);
                             })
         })
 
-
-
-        // const cleccionNoti = collection(db, 'Items')
-        // const queryActulizarStock = query(
-        //     cleccionNoti, where( documentId() , 'in', cartList.map(it => it.id))          
-        // )
-
-        // const batch = writeBatch(db)
-
-       
-        // //console.log(queryActulizar)
-        // getDocs(queryActulizarStock)
-        // .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-        //     stock: resp.data().stock - cartList.find(item => item.id === resp.id).cantidad
-        // }) ))
-
-        // batch.commit()
 
 
     }
@@ -76,7 +59,7 @@ console.log('order', order);
             cartList.map(prod=> <div> 
                 <li key={prod.id}> Producto: {prod.name}, Cantidad: {prod.cantidad}</li>
                  </div> ) }
-                 <h5 className="infTxt">Para finalizar tu compra llena el sifuiente formulario y genera la orden. </h5>
+                 <h5 className="infTxt">Para finalizar tu compra llena el siguiente formulario y genera la orden. </h5>
             
             <form 
                onSubmit={generarOrden}

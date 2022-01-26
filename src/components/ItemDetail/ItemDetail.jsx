@@ -8,12 +8,11 @@ import {} from "./ItemDetail.css"
 
 
 const ItemDetail = ({ Item }) => {
-  const {cartList, AgregarAlCarrito} = useContext(CartContext)
+  const { AgregarAlCarrito} = useContext(CartContext)
   const [goCart, setGoCart] = useState(true)
  
 
   const onAdd = (cant) => {
-    console.log(cant)
     setGoCart(false);
     AgregarAlCarrito({...Item, cantidad: cant})
   }

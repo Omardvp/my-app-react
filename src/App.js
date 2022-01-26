@@ -24,14 +24,16 @@ function App() {
           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote " /> }
           />
           <Route
-          path="my-app-react/categoria/:idCategoria"
+          path="my-app-react/category/:idCategory"
           element={ <ItemListContainer greeting="Equipment. Vintage Sport clote"/>} 
           />
           <Route
           path="my-app-react/detalle/:id"
           element={ <ItemDetailContainer /> }
           />
-           <Route path="my-app-react/carrito" element={<Cart />}/> 
+           <Route 
+           path="my-app-react/carrito" 
+           element={<Cart />}/> 
       </Routes>
       <Footer/>
   

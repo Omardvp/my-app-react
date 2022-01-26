@@ -4,3 +4,8 @@
     margin-top: 20px;
 }
 
+.listCnt {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+}

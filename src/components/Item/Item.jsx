@@ -14,7 +14,7 @@ function Item({producto}) {
                   <h5 className="cardTitle">Producto: {producto.name}</h5>
                     <p>Descripcion: {producto.description}</p>
                     <p>Precio: ${producto.price}</p>
-                  <Link to={`/my-app-react/detalle/${producto.id}`}> <button className='btn btn-outline-danger'>Detalle del producto</button></Link>
+                  <Link to={`/my-app-react/detalle/${producto.id}`}> <button className='btn btn-primary'>Detalle del producto</button></Link>
                 </div>
                 </div>     
         </div>

@@ -41,7 +41,7 @@ const CartContextProvider = ({children}) => {
             newArr[index].cantidad = newArr[index].cantidad + 1;
             setCartList(newArr)
         }else{
-            console.log('No hay mas stock');
+            alert('Lo sentimos, no hay mas stock de este producto');
         }
         
 
