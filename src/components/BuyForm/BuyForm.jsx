@@ -2,10 +2,12 @@ import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from '../Context/CartContext'
 import {} from "./BuyForm.css"
+import {Link} from "react-router-dom"
 
 
 
 function Buy() {
+    const [form , setForm] = useState(true);
     const {  cartList, removeCart, totalCart  } = useCartContext()
     const [idOrder, setIdOrder] = useState('')
     const [order, setOrder] = useState({
@@ -41,14 +43,21 @@ function Buy() {
             name:order.name, email:order.email, phone:order.phone
                             })
         })
-
-
-
-    }
+}
 
     return (
         
         <center>
+            <>
+            {idOrder ?  <div>
+                <h3>Felicidades {order.name} tu compra se ha realizado exitosamente!</h3>
+                <h3>Podes hacer el seguimiento de tu compra con el suiguiente codigo: <br></br> {idOrder}</h3>
+                <Link className="btn btn-warning" to={'/my-app-react/'}>Volver a Inicio</Link>
+                </div> 
+            :
+            
+            cartList.map(prod=> <div>
+                <div>
            <h5 className="infTxt">Estas a un paso de terminar tu compra </h5>
             <form 
                onSubmit={generarOrden}
@@ -78,22 +87,12 @@ function Buy() {
                 <br></br>
                 <div className="btnsForm"> 
                 <button className="btn btn-primary">Generar Orden</button>
-               
-                </div>
+               </div>
             </form>
-           
-            <>
-            {idOrder ?  <div>
-                <h3>Orden de compra generada con el id: {idOrder}</h3>
-                <h3>A nombre de: {order.name}</h3>
-                <h3>Telefono: {order.phone} </h3>
-                <h3>E-mail: {order.email}</h3>
-                </div> 
-            :
-            
-            cartList.map(prod=> <div> 
+            </div>
+                <div> 
                 <li key={prod.id}> Producto: {prod.name}, Cantidad: {prod.cantidad}</li>
-                 </div> ) } </>
+                 </div> </div> ) } </>
 
           </center>
     )
