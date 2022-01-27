@@ -10,7 +10,7 @@ import {} from "./Cart.css"
 
 function Cart() {
     
-    const { cartList } = useContext(CartContext)
+    const { cartList, removeCart } = useContext(CartContext)
     const [ total, setTotal ] = useState(0);
    
     
@@ -50,8 +50,9 @@ function Cart() {
                 <center className="container finalCard">
                     <h2 className='totalPrice'>Precio total de tus compras : ${total}</h2> 
                     
-                     
-                <BuyForm />
+                    <Link to={`/my-app-react/buyForm/`}> <button className='btn btn-primary'>Terminar compra</button></Link>
+               
+                <button onClick={removeCart} className="btn btn-danger">Vaciar Carrito</button>
                     </center>
             </div>:
             <center className="container">

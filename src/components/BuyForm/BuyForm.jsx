@@ -36,7 +36,7 @@ function Buy() {
         .then(resp => (setIdOrder(resp.id)))
         .catch(err => console.log(err))
         .finally(()=> {
-            // removeCart()
+            removeCart()
             setOrder({
             name:order.name, email:order.email, phone:order.phone
                             })
@@ -47,24 +47,14 @@ function Buy() {
     }
 
     return (
-        <div>
-            {idOrder ? <div>
-                <h3>Orden de compra generada con el id: {idOrder}</h3>
-                <h3>A nombre de: {order.name}</h3>
-                <h3>Telefono: {order.phone} </h3>
-                <h3>E-mail: {order.email}</h3>
-                </div> 
-            :
-            
-            cartList.map(prod=> <div> 
-                <li key={prod.id}> Producto: {prod.name}, Cantidad: {prod.cantidad}</li>
-                 </div> ) }
-                 <h5 className="infTxt">Para finalizar tu compra llena el siguiente formulario y genera la orden. </h5>
-            
+        
+        <center>
+           <h5 className="infTxt">Estas a un paso de terminar tu compra </h5>
             <form 
                onSubmit={generarOrden}
                 onChange={handleChange} 
-            >   <label htmlFor="name">Nombre:</label>
+            >  
+                <label htmlFor="name">Nombre:</label>
                 <input className=""
                     type='text' 
                     name='name' 
@@ -88,10 +78,24 @@ function Buy() {
                 <br></br>
                 <div className="btnsForm"> 
                 <button className="btn btn-primary">Generar Orden</button>
-                <button onClick={removeCart} className="btn btn-danger">Vaciar Carrito</button>
+               
                 </div>
             </form>
-          </div>
+           
+            <>
+            {idOrder ?  <div>
+                <h3>Orden de compra generada con el id: {idOrder}</h3>
+                <h3>A nombre de: {order.name}</h3>
+                <h3>Telefono: {order.phone} </h3>
+                <h3>E-mail: {order.email}</h3>
+                </div> 
+            :
+            
+            cartList.map(prod=> <div> 
+                <li key={prod.id}> Producto: {prod.name}, Cantidad: {prod.cantidad}</li>
+                 </div> ) } </>
+
+          </center>
     )
 }
 

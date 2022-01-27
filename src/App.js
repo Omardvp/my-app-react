@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from "./components/Cart/Cart";
 import { CartContextProvider } from "./components/Context/CartContext.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
+import  BuyForm from "./components/BuyForm/BuyForm.jsx";
 
 
 
@@ -34,6 +35,9 @@ function App() {
            <Route 
            path="my-app-react/carrito" 
            element={<Cart />}/> 
+           <Route 
+           path="my-app-react/buyForm" 
+           element={<BuyForm  />}/> 
       </Routes>
       <Footer/>
   
